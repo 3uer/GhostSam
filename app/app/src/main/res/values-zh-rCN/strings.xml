@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GhostSam</string>
+    <string name="app_name">GhostSam Next</string>
 
     <string name="nav_home">首页</string>
     <string name="nav_history">日志</string>
@@ -223,7 +223,7 @@
     <string name="section_about">关于</string>
     <string name="settings_about">关于</string>
 
-    <string name="about_title">关于 GhostSam</string>
+    <string name="about_title">关于 GhostSam Next</string>
     <string name="about_body">针对三星设备（主要为 S26 系列）的临时 root 获取工具\nCVE-2026-43284/CVE-2026-43499（GhostLock）</string>
     <string name="about_credit">由 %1$s 构建 · %2$s</string>
     <string name="about_ksu_title">KernelSU</string>
@@ -450,14 +450,14 @@
     <string name="tools_sideload">侧载菜单</string>
     <string name="tools_sideload_summary">触发 FOTA SecretCodeReceiver 广播</string>
     <string name="terminal_title">终端</string>
-    <string name="terminal_banner">GhostSam 终端\n后端：su / 无线调试 / Shizuku\n\n</string>
+    <string name="terminal_banner">GhostSam Next 终端\n后端：su / 无线调试 / Shizuku\n\n</string>
     <string name="terminal_failed">[错误] 无法启动 Shell(无可用通道)\n</string>
     <string name="section_support">支持</string>
     <string name="settings_boot_reapply">开机后提醒重新获取 root</string>
     <string name="settings_boot_reapply_summary">重启后发送一条通知，点按即可重新运行提权链。不会在无人操作时自动执行——你的点按才会启动。Android 13+ 需要通知权限。</string>
     <string name="boot_reapply_channel">开机重新获取</string>
     <string name="boot_reapply_notif_title">重启后 root 已失效</string>
-    <string name="boot_reapply_notif_text">点按重新应用 GhostSam root。</string>
+    <string name="boot_reapply_notif_text">点按重新应用 GhostSam Next root。</string>
     <string name="support_device_report">复制设备报告</string>
     <string name="support_device_report_summary">复制可直接粘贴到 GitHub issue 的 Markdown 设备信息（代号、版本、内核、匹配证据）。</string>
     <string name="support_report_copied">设备报告已复制</string>
