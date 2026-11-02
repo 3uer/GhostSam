@@ -12,7 +12,7 @@ object DeviceReport {
         val s = DeviceSnapshot.current()
         val match = DeviceMatcher.match(s)
         return buildString {
-            appendLine("### Device report (GhostSam v${BuildConfig.VERSION_NAME}, build ${BuildConfig.VERSION_CODE})")
+            appendLine("### Device report (GhostSam Next v${BuildConfig.VERSION_NAME}, build ${BuildConfig.VERSION_CODE})")
             appendLine()
             appendLine("| field | value |")
             appendLine("| --- | --- |")

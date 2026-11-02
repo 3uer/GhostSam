@@ -1,6 +1,12 @@
-# GhostSam
+# GhostSam Next
 
 **English** | [中文](README.zh.md)
+
+GhostSam Next is the actively developed continuation of
+[snothin/GhostSam](https://github.com/snothin/GhostSam) — same chains, same
+payloads, plus the robustness fixes, failure diagnostics and support tooling
+that ship from this repository. Development happens here; upstream credits
+and provenance are kept intact (see [NOTICE](NOTICE)).
 
 Kernel privilege-escalation toolkit for Samsung Galaxy S22 / S26 / Z Fold8
 devices (Android 12 and up, kernels 5.10-6.18), with an Android manager app
@@ -127,6 +133,7 @@ exploit/
   src/series/s22|s26|zf8/        per-series entry points, parameter tables,
                                  and assembly
   tests/                         host selftests (run on any machine, no device)
+ci/                              ready CI workflow (copy into .github/workflows/)
 ```
 
 ## Building
@@ -166,8 +173,8 @@ make test       # host selftests (no device / NDK needed)
 rules (default < file < env < CLI, pair-env reload semantics) and fails the
 build if a regression reintroduces the env-over-CLI shadowing bug. A ready
 GitHub Actions workflow that runs this selftest plus
-`./gradlew assembleDebug` on every push is attached to PR #10 — drop it
-into `.github/workflows/` to enable CI.
+`./gradlew assembleDebug` on every push ships at `ci/ci.yml` — copy it to
+`.github/workflows/ci.yml` to enable CI.
 
 ### Dirtyfrag kernel module
 
@@ -218,7 +225,7 @@ the app UI exposes the safe subset.
 ## Relationship to DFRoot
 
 [DFRoot](https://github.com/diabl0w/DFRoot) by @diabl0w is a focused,
-minimal implementation of the public DirtyFrag technique. GhostSam
+minimal implementation of the public DirtyFrag technique. GhostSam Next
 integrates the earlier work (the Ghostlock exploit chains for S22 / S26 /
 Z Fold8) into one toolkit, so the project is larger and more involved
 overall - yet its dirtyfrag path is still fast: a single run deploys and
@@ -238,6 +245,8 @@ complying with applicable law.
 
 ## Credits
 
+- **Upstream base** - [snothin/GhostSam](https://github.com/snothin/GhostSam)
+  by @snothin; GhostSam Next continues from it.
 - **s26 series** - merged from [ghostlock-s26](https://github.com/snothin/ghostlock-s26);
   its README carries the full credit list.
 - **Z Fold8 transplant input (io_submit primer)** - from @diabl0w.

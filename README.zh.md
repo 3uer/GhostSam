@@ -1,6 +1,11 @@
-# GhostSam
+# GhostSam Next
 
 **中文** | [English](README.md)
+
+GhostSam Next 是 [snothin/GhostSam](https://github.com/snothin/GhostSam) 的活跃
+延续版本 —— 同样的利用链、同样的 payload，外加由本仓库发布的健壮性修复、失败
+诊断与支持工具。开发在本仓库进行；上游致谢与出处声明完整保留（见
+[NOTICE](NOTICE)）。
 
 面向三星 Galaxy S22 / S26 / Z Fold8 的内核提权工具包（Android 12 及以上，
 内核 5.10-6.18），附带一个驱动全流程的 Android 管理端 App —— 走内置无线
@@ -108,6 +113,7 @@ exploit/
                                  （经 JNI 编译进 App）
   src/series/s22|s26|zf8/        各系列入口、参数表与汇编
   tests/                         宿主机自测（任意机器可跑，无需设备）
+ci/                              开箱即用的 CI 工作流（复制到 .github/workflows/ 启用）
 ```
 
 ## 构建
@@ -144,8 +150,8 @@ make test       # 宿主机自测（无需设备 / NDK）
 一起编译并在宿主机上运行：锁定配置层优先级规则（default < file < env <
 CLI，成对 env 的 reload 语义），一旦回归重新引入 env 覆盖 CLI 的遮蔽 bug
 即构建失败。一个开箱即用的 GitHub Actions 工作流（每次 push 跑该自测 +
-`./gradlew assembleDebug`）随 PR #10 附带 —— 放入 `.github/workflows/`
-即可启用 CI。
+`./gradlew assembleDebug`）已随仓库附在 `ci/ci.yml` —— 复制到
+`.github/workflows/ci.yml` 即可启用 CI。
 
 ### Dirtyfrag 内核模块
 
@@ -193,7 +199,7 @@ payload 读取一组由 App 侧 JNI/exec 链注入的 `GHOSTSAM_*` 环境变量 
 ## 与 DFRoot 的关系
 
 @diabl0w 的 [DFRoot](https://github.com/diabl0w/DFRoot) 是公开 DirtyFrag
-技术的精简实现。GhostSam 将更早期的工作（面向 S22 / S26 / Z Fold8 的
+技术的精简实现。GhostSam Next 将更早期的工作（面向 S22 / S26 / Z Fold8 的
 Ghostlock 利用链）整合进一个工具包，项目整体更大也更复杂 —— 但其
 dirtyfrag 路径依然很快：单次运行即部署并 late-load KernelSU。欢迎试用，
 欢迎反馈、issue 与 PR。
@@ -209,6 +215,8 @@ dirtyfrag 路径依然很快：单次运行即部署并 late-load KernelSU。欢
 
 ## 致谢
 
+- **上游基座** —— @snothin 的 [snothin/GhostSam](https://github.com/snothin/GhostSam)；
+  GhostSam Next 由此继续。
 - **s26 系列** —— 合并自 [ghostlock-s26](https://github.com/snothin/ghostlock-s26)；
   完整致谢名单位于其 README。
 - **Z Fold8 移植输入（io_submit 入门）** —— 来自 @diabl0w。
